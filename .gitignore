@@ -1,2 +1,3 @@
 node_modules
+cucumber-json
 cypress.env.json
