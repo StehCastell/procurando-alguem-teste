@@ -10,7 +10,7 @@ class SignUpPageObjects{
     }
 
     insertFullName(fullName){
-        cy.get(elements.fullName).type(fullName)
+        cy.get(elements.fullName).click().type(fullName)
     }
 
     insertEmail(email){
@@ -18,7 +18,7 @@ class SignUpPageObjects{
     }
 
     insertFirstPassword(password){
-        cy.get(elements.firstPassword).type(password)
+        cy.get(elements.firstPassword).click().type(password)
     }
 
     insertSecondPassword(password){
@@ -27,6 +27,7 @@ class SignUpPageObjects{
 
     clickButtonCreateAccount(){
         cy.get(elements.buttonCreateAccount).click()
+        cy.wait(1000)
     }
 
     clickButtonCancel(){

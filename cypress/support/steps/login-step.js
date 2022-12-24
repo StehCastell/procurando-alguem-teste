@@ -24,5 +24,5 @@ When('insiro o usuario {string} e senha {string}', (user, password) => {
 
 Then('deverá mostrar uma mensagem de erro', () => {    
     login.clickButtonSignIn()
-    login.messageError()
+    login.messageAlert('Usuário ou Senha incorretos!')
 })

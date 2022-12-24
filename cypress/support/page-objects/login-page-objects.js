@@ -26,9 +26,9 @@ class LoginPageObjects{
         }
     }
 
-    messageError(){
+    messageAlert(message){
         cy.on('window:alert', (str) => {
-            expect(str).to.equal('Usuário ou Senha incorretos!')
+            expect(str).to.equal(message)
         })
         cy.on('window:confirm', () => true);
     }
