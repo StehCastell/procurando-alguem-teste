@@ -12,12 +12,17 @@ When('insiro as informações do usuário {string} corretamente', (user) => {
     login.clickButtonSignIn()
 })
 
-//Scenario 01
-Then('serei encaminhado para a tela de Administrador', () => {
-    login.adminScreen()
+Then('serei encaminhado para a tela de {string}', (screen) => {
+    login.mainScreen(screen)
 })
 
-//Scenario 02
-Then('serei encaminhado para a tela de Home Page', () => {
-    login.homePageScreen()
+//Scenario 03 e 04
+When('insiro o usuario {string} e senha {string}', (user, password) => {
+    login.enterUser(user)  
+    login.enterPassword(password)
+})
+
+Then('deverá mostrar uma mensagem de erro', () => {    
+    login.clickButtonSignIn()
+    login.messageError()
 })
