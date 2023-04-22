@@ -2,7 +2,7 @@ import {loginElements as elements} from "../elements/login-elements"
 
 class LoginPageObjects{
     accessScreenSignIn(){
-        cy.visit('https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-2-e1-proj-web-t5-procurando-alguem/src/paginas/usuario/login.html')
+        cy.visit(`${(Cypress.config().baseUrl)}usuario/login.html`)
     }
 
     enterUser(user){
@@ -20,9 +20,9 @@ class LoginPageObjects{
 
     mainScreen(user){
         if(user == "Admin"){                
-            cy.url().should('be.equal', 'https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-2-e1-proj-web-t5-procurando-alguem/src/paginas/usuario/login-index.html')
+            cy.url().should('be.include', 'usuario/login-index.html')
         } else {
-            cy.url().should('be.equal', 'https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-2-e1-proj-web-t5-procurando-alguem/src/paginas/usuario/home-page.html')
+            cy.url().should('be.include', 'usuario/home-page.html')
         }
     }
 
@@ -30,7 +30,7 @@ class LoginPageObjects{
         cy.on('window:alert', (str) => {
             expect(str).to.equal(message)
         })
-        cy.on('window:confirm', () => true);
+        cy.on('window:confirm', () => true);        
     }
 } 
 

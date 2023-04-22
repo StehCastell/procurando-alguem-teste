@@ -8,12 +8,12 @@ Given('acesso a modal de Cadastrar Novo Usuario', () => {
 })
 
 //Scenario 01 e 02
-When('insiro as informacoes corretamente para cadastrar um novo usuario', () => {
-    signUp.insertLogin('batata')
-    signUp.insertFullName('Batata Castellano')
-    signUp.insertEmail('batata@teste.com')
-    signUp.insertFirstPassword('batata')
-    signUp.insertSecondPassword('batata')
+When('insiro as informacoes para cadastrar um novo usuario {string}, {string}, {string}, {string}, {string}', (user, fullName, email, firtsPassword, secondPassword) => {
+    signUp.insertLogin(user)
+    signUp.insertFullName(fullName)
+    signUp.insertEmail(email)
+    signUp.insertFirstPassword(firtsPassword)
+    signUp.insertSecondPassword(secondPassword)
     cy.wait(1000)
 })
 
@@ -23,9 +23,8 @@ Then('finalizo o cadastro', () => {
     signUp.clickCloseX()
 })
 
-And('farei o login com o novo usuario cadastrado', () => {
-    login.enterUser('batata')    
-    login.enterPassword('batata')
-    login.clickButtonSignIn()
-    login.mainScreen('Home Page')
+Then('exibo a mensagem {string}', message => { 
+    signUp.clickButtonCreateAccount()
+    login.messageAlert(message)
+    signUp.clickCloseX()
 })

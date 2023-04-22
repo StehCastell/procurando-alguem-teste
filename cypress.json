@@ -1,4 +1,4 @@
 {
-    "baseUrl": "https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-2-e1-proj-web-t5-procurando-alguem/src/paginas/usuario/home-page.html",
+    "baseUrl": "https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-2-e1-proj-web-t5-procurando-alguem/src/paginas/",
     "testFiles": "**/*.feature"
   }
